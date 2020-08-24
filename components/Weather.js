@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         opacity: 0.6,
         backgroundColor: 'black',
         width: '100%',
-        height:'50%'
+        height:'60%'
     },
     backdrop: {
         flexDirection: 'column',
