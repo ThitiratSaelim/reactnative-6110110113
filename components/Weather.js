@@ -4,12 +4,12 @@ import Forecast from './Forecast';
 
 export default function Weather(props){
     const [forecastInfo, setForecastInfo] = useState({
-        main: 'main',
-        description: 'description',
+        main: '-',
+        description: '-',
         temp: 0,
         humidity: 0,
     })
-
+    
     useEffect(() => {
         console.log(`fetching data with zipCode = ${props.zipCode}`)
         if (props.zipCode) {

@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function Forecast(props){
-    var iconic = ""
+    let iconic = ""
     switch(props.main){
         case 'Rain' : iconic = 'weather-rainy' 
             break;
@@ -23,8 +23,8 @@ export default function Forecast(props){
     return (
         <View>
             <Text style={styles.mainText}>{props.main}</Text>
-            <View style={styles.icons}>
-                <MaterialCommunityIcons size={48} name={iconic} color={'#fff'}/>
+            <View style={styles.iconics}>
+                <MaterialCommunityIcons size={48} name={(iconic)} color={'#fff'}/>
             </View>
             <Text style={styles.description}>{props.description}</Text>
             <View style={styles.text}>
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         color: 'white'
     },
-    icons:{
+    iconics:{
         flexDirection: 'row',  
         justifyContent: 'center'
     },
