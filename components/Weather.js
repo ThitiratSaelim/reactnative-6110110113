@@ -8,6 +8,8 @@ export default function Weather(props){
         description: 'description',
         temp: 0,
         humidity: 0,
+        name: 'name',
+        country: 'country'
     })
     
     useEffect(() => {
@@ -21,6 +23,8 @@ export default function Weather(props){
                     description: json.weather[0].description,
                     temp: json.main.temp,
                     humidity: json.main.humidity,
+                    name: json.name,
+                    country: json.sys.country
                 });
             })
             .catch((error) => {
@@ -32,13 +36,12 @@ export default function Weather(props){
     return (
         <View style={styles.container}>
             <ImageBackground source={require('../location.png')} style={styles.backdrop}>
-                <Text style={styles.zipCode}>Zip Code</Text> 
-                <Text style={styles.zipCode}> is</Text>
-                <Text style={styles.zipCode}>{props.zipCode}</Text> 
+                <Text style={styles.zipcode}>{forecastInfo.name} </Text>
+                <Text style={styles.zipcode}>( {forecastInfo.country} ) Zip Code</Text> 
+                <Text style={styles.zipcode}>{props.zipCode}</Text> 
             </ImageBackground>
             <Forecast {...forecastInfo}/>
         </View>
-       
     );
 }
 
@@ -49,17 +52,18 @@ const styles = StyleSheet.create({
     },
     backdrop: {
         flexDirection: 'column',
-        alignItems: 'center',
         width: '100%',
         height: 150,
-        paddingTop : 10,
-        
     },
-    zipCode: {
-        fontSize : 22,
+    zipcode: {
+        fontSize : 25,
+        color: '#d2691e',
+        textShadowColor: 'black',
+        textShadowOffset: {width: 2, height: 1.5},
+        textShadowRadius: 12,
+        fontWeight: 'bold',
         textAlign: 'center',
-        color: 'white',
         paddingTop: 10,
-        paddingLeft: 80
+        paddingLeft: 90,
     }
 });

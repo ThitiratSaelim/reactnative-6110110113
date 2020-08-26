@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavigationContainer, StackActions } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ZipCodeScreen from './screen/ZipCodeScreen';
 import WeatherScreen from './screen/WeatherScreen';

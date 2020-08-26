@@ -30,7 +30,6 @@ const ZipItem = ({place, code, background, navigation}) => (
 )
 
 export default class ZipCodeScreen extends Component{
-    
     constructor(props) {
         super(props);
         this.state = {
@@ -39,6 +38,7 @@ export default class ZipCodeScreen extends Component{
             ignoreCase: true
         }
     }
+
     searchUpdated(term) {
         this.setState({ searchTerm: term })
     }
@@ -49,16 +49,16 @@ export default class ZipCodeScreen extends Component{
             <ImageBackground source={require('../bg.jpg')} style={styles.backdrop}>
                 <SafeAreaView style={styles.container}>
                     <TextInput
-                        placeholder = 'Search Place For Code'
+                        placeholder = 'Search Place For ZipCode'
                         placeholderTextColor = 'grey'
                         underlineColorAndroid= "transparent"
                         onChangeText={(term) => { this.searchUpdated(term) }} 
                         style = {styles.search}
                     />
                     <ScrollView data = {availableZipItems} style={styles.scroll}>
-                        {filteredPlace.map((availableZipItems) => {
+                        {filteredPlace.map((availableZipItems,index) => {
                             return (
-                                <TouchableOpacity onPress={()=>alert(availableZipItems.code)}>
+                                <TouchableOpacity  key={index} onPress={()=>alert(availableZipItems.code)}>
                                     <View style={styles.searchstyle}>
                                         <Text style={styles.textSearch}>{availableZipItems.place}</Text>
                                     </View>
@@ -73,8 +73,9 @@ export default class ZipCodeScreen extends Component{
                     />
                 </SafeAreaView>
             </ImageBackground>
-    )    
-}}
+        )    
+    }
+}
 
 const styles = StyleSheet.create({
     container: {
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
     },
     backdrop: {
         width: '100%',
-        height: '100%'
+        height: '100%',
     },
     zipItem: {
         flex: 1,
@@ -111,18 +112,19 @@ const styles = StyleSheet.create({
     textSize: {
         fontSize: 20,
     },
-    searchstyle: {
-        paddingLeft: 15,
-        backgroundColor:'#33cccc',
-        marginVertical: 1,
-        marginHorizontal: 16,
-        borderRadius: 15,
-    },
     textSearch: {
         color: 'white',
         fontSize: 15,
     },
+    searchstyle: {
+        paddingLeft: 15,
+        backgroundColor: '#33cccc',
+        marginVertical: 1,
+        marginHorizontal: 16,
+        borderRadius: 15,
+    },
     search: {
+        height: 25,
         fontSize: 15,
         paddingLeft: 15,
         borderBottomWidth: 0.8,
