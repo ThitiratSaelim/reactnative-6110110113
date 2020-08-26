@@ -4,8 +4,8 @@ import Forecast from './Forecast';
 
 export default function Weather(props){
     const [forecastInfo, setForecastInfo] = useState({
-        main: '-',
-        description: '-',
+        main: 'main',
+        description: 'description',
         temp: 0,
         humidity: 0,
     })
@@ -30,35 +30,36 @@ export default function Weather(props){
     }, [props.zipCode])
 
     return (
-        <ImageBackground source={require('../bg.jpg')} style={styles.backdrop}>
-            <View style={styles.container}>
-                <Text style={styles.zipCode}>Zip Code is <Text>{props.zipCode}</Text></Text>
-                <Forecast {...forecastInfo}/>
-            </View>
-        </ImageBackground>
+        <View style={styles.container}>
+            <ImageBackground source={require('../location.png')} style={styles.backdrop}>
+                <Text style={styles.zipCode}>Zip Code</Text> 
+                <Text style={styles.zipCode}> is</Text>
+                <Text style={styles.zipCode}>{props.zipCode}</Text> 
+            </ImageBackground>
+            <Forecast {...forecastInfo}/>
+        </View>
+       
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 25,
-        position: 'absolute',
-        left: 0,
-        top: 0,
-        opacity: 0.6,
-        backgroundColor: 'black',
         width: '100%',
-        height:'60%'
+        height:'100%',
     },
     backdrop: {
         flexDirection: 'column',
         alignItems: 'center',
         width: '100%',
-        height: '100%'
+        height: 150,
+        paddingTop : 10,
+        
     },
     zipCode: {
         fontSize : 22,
         textAlign: 'center',
-        color: 'white'
+        color: 'white',
+        paddingTop: 10,
+        paddingLeft: 80
     }
 });
