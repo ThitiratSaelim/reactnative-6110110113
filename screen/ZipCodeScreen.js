@@ -124,13 +124,13 @@ const styles = StyleSheet.create({
         borderRadius: 15,
     },
     search: {
-        height: 25,
+        height: 30,
         fontSize: 15,
         paddingLeft: 15,
         borderBottomWidth: 0.8,
         borderBottomColor: 'grey',
     },
     scroll: {
-        height : 50,
+        height : 52,
     }
 })

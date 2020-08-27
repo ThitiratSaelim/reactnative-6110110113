@@ -53,17 +53,17 @@ const styles = StyleSheet.create({
     backdrop: {
         flexDirection: 'column',
         width: '100%',
-        height: 167,
+        height: 180,
     },
     zipcode: {
-        fontSize : 32,
-        color: '#666666',
-        textShadowColor: 'orange',
+        fontSize : 30,
+        color: 'black',
+        textShadowColor: '#ff0055',
         textShadowOffset: {width: 1.5, height: 1.5},
         textShadowRadius: 12,
         fontWeight: 'bold',
         textAlign: 'center',
-        paddingTop: 10,
-        paddingLeft: 90,
+        paddingTop: 12,
+        paddingLeft: 100,
     }
 });
