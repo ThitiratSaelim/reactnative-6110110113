@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList, View, Text, StyleSheet, Image, ImageBackground } from 'react-native';
+import { FlatList, View, Text, StyleSheet, Image, ImageBackground, Alert } from 'react-native';
 import { TouchableHighlight, TextInput, ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
@@ -37,7 +37,7 @@ export default class ZipCodeScreen extends Component{
             searchAttribute: 'place',
             ignoreCase: true
         }
-    }
+    }      
 
     searchUpdated(term) {
         this.setState({ searchTerm: term })
@@ -58,7 +58,7 @@ export default class ZipCodeScreen extends Component{
                     <ScrollView data = {availableZipItems} style={styles.scroll}>
                         {filteredPlace.map((availableZipItems,index) => {
                             return (
-                                <TouchableOpacity  key={index} onPress={()=>alert(availableZipItems.code)}>
+                                <TouchableOpacity  key={index} onPress={()=>Alert.alert('ZipCode',availableZipItems.code)}>
                                     <View style={styles.searchstyle}>
                                         <Text style={styles.textSearch}>{availableZipItems.place}</Text>
                                     </View>
