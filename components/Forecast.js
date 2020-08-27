@@ -60,10 +60,12 @@ const styles = StyleSheet.create({
         height: '100%',
         opacity: 0.7,
         backgroundColor : 'black',
+        borderRadius: 10,
     },
     mainText: {
         fontSize : 40,
         textAlign: 'center',
+        fontWeight: 'bold',
         paddingTop: 30,
         paddingBottom: 20,
         color: 'white',
@@ -73,8 +75,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     description: {
-        fontSize : 25,
+        fontSize : 30,
         textAlign: 'center',
+        fontWeight: 'bold',
         paddingTop: 20,
         paddingBottom: 10,
         color: 'white',
@@ -82,12 +85,13 @@ const styles = StyleSheet.create({
     subText: {
         fontSize : 20, 
         color: 'white',
+        fontWeight: 'bold',
     },
     text: {
         flexDirection: 'row',
         justifyContent: 'space-around',
         paddingTop : 20,
-        paddingBottom : 20
+        paddingBottom : 20,
     },
     temp: {
         flexDirection: 'row',  
@@ -96,10 +100,12 @@ const styles = StyleSheet.create({
     num: {
         fontSize : 30, 
         color: 'white',
+        fontWeight: 'bold',
     },
     unit: {
         fontSize : 22,  
         color: 'white',  
-        textAlignVertical: 'center',     
+        textAlignVertical: 'center', 
+        fontWeight: 'bold',    
     },
 });
